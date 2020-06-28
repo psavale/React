@@ -6,16 +6,16 @@ function HookCounterTwo() {
 
     const IncrementCount = () => {
         for (let index = 0; index < 5; index++) {
-            setCount(prevState => prevState + 1)
+            setCount(count + 1)
         }
     }
 
     return (
         <div>
             Count: {count}
-            <button onClick={() => setCount(prevState => prevState + 1)}>Increment</button>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
             <button onClick={() => setCount(initialState)}>reset</button>
-            <button onClick={() => setCount(prevState => prevState - 1)}>Decrement</button>
+            <button onClick={() => setCount(count - 1)}>Decrement</button>
             <button onClick={IncrementCount}>increment count by 5</button>
 
         </div>

@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import { iceCreamAction } from '../actions/actions';
 
@@ -7,8 +7,8 @@ class IceCream extends Component {
     render() {
         return (
             <Fragment>
-                <h3>No of iceCream remaining -{this.props.iceCreamCount}</h3>
-                <button onClick={()=>this.props.iceCreamAction(1)}>Buy iceCream</button>
+                <h5>No of iceCream remaining -{this.props.iceCreamCount}</h5>
+                <button onClick={() => this.props.iceCreamAction(1)}>Buy iceCream</button>
             </Fragment>
         );
 

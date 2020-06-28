@@ -1,12 +1,11 @@
 
 import { BUY_ICE_CREAM } from '../actions/actionTypes'
 
-const initialState={
-    IceCreamInventory:20
+const initialState = {
+    IceCreamInventory: 20
 }
 
-export const iceCreamReducer = (state=initialState, action) => {   
-    console.log('iceCream reducer got called', action.type);
+export const iceCreamReducer = (state = initialState, action) => {
     switch (action.type) {
         case BUY_ICE_CREAM: return {
             ...state,

@@ -1,23 +1,21 @@
 import React from 'react'
 
-function Heading(props)
-{
-return(
-    <h1>
-        {props.text}
-    </h1>
-)
+function Heading(props) {
+    return (
+        <h4>
+            {props.text}
+        </h4>
+    )
 }
 
 
-function RegularText(props)
-{
-    return(
+function RegularText(props) {
+    return (
         <p>
             {props.children}
         </p>
     )
-   
+
 }
 
-export  {Heading,RegularText};
+export { Heading, RegularText };

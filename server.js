@@ -12,7 +12,9 @@ app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
 }));
 
-// Serve the files on port 3000.
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!\n');
-});
+app.get('/', (_req, res) => {
+  res.send(`<h1> React is Excellent !! </h1>`);
+})
+
+app.listen(8080);
+console.log('server is listening');

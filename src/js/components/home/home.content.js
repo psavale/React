@@ -18,10 +18,6 @@ const user = {
     lastName: 'Savale'
 };
 
-
-
-
-
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -42,12 +38,10 @@ class Home extends Component {
 
 
     changeCity() {
-        //  console.log("this",this);
         this.setState({ city: "pune" });
     }
 
     render() {
-        //   console.log(this.changeCity.bind(this));
         return (
             <div>
                 <div className="header-wrapper">
@@ -67,13 +61,13 @@ class Home extends Component {
                     </div>
 
                     <div className="header-content">
-                        <OwlCarosuel/>
+                        <OwlCarosuel />
 
                     </div>
                     <div className="header-content2">
-                        <h1>
+                        <h4>
                             Hello, {formatName(user)}!
-                        </h1>
+                        </h4>
 
                         <span>Hello this is {this.props.name} and my age is {this.props.age}</span>
                         <div><span>my driving license expires in {this.state.time} min </span></div>
@@ -86,27 +80,22 @@ class Home extends Component {
                 <div className="left-container">
 
                     <div>
-                        <h2> You can Buy Cake and Ice Cream here</h2>
+                        <h5> You can Buy Cake and Ice Cream here</h5>
                         <Cake />
                         <IceCream />
                     </div>
                 </div>
 
                 <div className="main-content">
-
-                    <div className="carosuel">
-
-                    </div>
-
+                    <div className="carosuel"> </div>
                 </div>
 
                 <div className="right-container">
                     <div>
-                        <h2> We are here to help you ! Contact Us</h2>
+                        <h5> We are here to help you ! Contact Us</h5>
                         <FormPost />
                     </div>
                 </div>
-
             </div>
         )
     }

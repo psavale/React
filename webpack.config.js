@@ -10,12 +10,9 @@ const source_dir = path.resolve(__dirname, 'src');
 const distination_dir = path.resolve(__dirname, 'src/dist');
 
 const config = {
-
-
     mode: 'development',
     entry: {
-        app: source_dir + "/html/index.js",
-        print: source_dir + "/print.js",
+        app: source_dir + "/html/index.js"
     },
 
     devtool: 'inline-source-map',
@@ -67,10 +64,10 @@ const config = {
             {
                 test: /\.ts(x?)$/,
                 exclude: /node_modules/,
-                use: [                  
+                use: [
                     {
                         loader: 'ts-loader'
-                       
+
                     },
                 ],
             }

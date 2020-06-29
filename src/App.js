@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './styles/style.scss';
 import Avatar from './js/components/avatar/avatar.content';
 import { Home } from './js/components/home/home.content'
-import { BrowserRouter as Router, Route, } from 'react-router-dom'
 import Form from './js/components/Form'
 import RefComp from './js/components/RefComp';
 import FocusInput from './js/components/FocusInput';
@@ -20,11 +19,14 @@ import UsersContainer from './js/components/lists/users-container';
 import Cake from './js/containers/cake';
 import IceCream from './js/containers/iceCream';
 import Users from './js/containers/Users';
-import HeaderNav from './js/components/navigation/headerNav';
+import { Header, RenderRoutes } from './js/components/navigation/header';
 import SignUp from './js/components/signup/signup.component'
 import List from './js/components/lists/list.content'
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom'
+import HookExamples from './js/components/hooks/hook-examples'
+import HocExample2 from './js/components/hoc/example2'
 
-function App() {
+const App = () => {
 
   // const user = {
   //   name: "psavale",
@@ -37,17 +39,42 @@ function App() {
   //   changeScreen(activeScreen == 0 ? 1 : 0);
   // }
 
+  const HandleMenu = () => {
+
+  };
+
   return (
     <div className="App">
 
 
       <div className="body">
+        <Router>
+          <header className="header">
+            <Header />
+          </header>
 
-        <header className="header">        
-          <HeaderNav />
-        </header>
+          <div className="container">
 
 
+            <Switch>
+              <Route exact path="/Home" component={Home} exact />
+              <Route exact path="/">
+                <Redirect to="/Home" />
+              </Route>
+              <Route path="/userlist" component={UsersContainer} />
+              <Route path="/signup" component={SignUp} />
+              <Route path="/list" component={List} />
+              <Route path="/HookExamples" component={HookExamples} />
+              <Route path="/hocExample2" component={HocExample2} />
+            </Switch>
+
+
+            {/* <Router>
+            <Route path="/HookExamples" component={HookExamples} />
+            <Router path="/hocExample2" component={HocExample2} />
+          </Router> */}
+          </div>
+        </Router>
         {/* <Home {...user} /> */}
         {/* <UsersContainer />
 

@@ -33,7 +33,7 @@ This code repository includes code snippet examples for below features
  Concretely, a higher-order component is a function that takes a component and returns a new component (extends the wrapped component).
  
  The HOC can read, edit and delete state of the WrappedComponent instance, and you can also add more state if you need to
- 
+
  ex: connect(mapStateToProps, mapDispatchToProps)(UserPage) 
  Ref: https://css-tricks.com/what-are-higher-order-components-in-react/
       https://github.com/franleplant/react-hoc-examples/blob/master/pp_state.js
@@ -44,6 +44,8 @@ This code repository includes code snippet examples for below features
 
  ---- New features ----
 React.memo()
+  -- React.memo only checks for prop changes. If your function component wrapped in React.memo has a useState or useContext Hook in its implementation, it will still rerender when state or context change.
+  
 React.lazy()
 
 

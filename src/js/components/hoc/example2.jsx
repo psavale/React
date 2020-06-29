@@ -1,3 +1,5 @@
+import React from "react";
+
 const preload = {
     "data": [
         {
@@ -86,12 +88,9 @@ const LocationCard = (props) => {
 //step2: passing wrapped component as function to hoc
 const Hoc = withSearch(Location)
 
-const App = () => (
-    <div>
-        //step1 calling the Hoc 
-        <Hoc />
-    </div>
-)
+// step1 calling the Hoc 
+const HocExample2 = () => {
+    return (<Hoc />);
+}
 
-
-ReactDOM.render(<App />, document.getElementById("root"));
+export default HocExample2;

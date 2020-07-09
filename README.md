@@ -1,5 +1,5 @@
 # React
-This code repository includes code snippet examples for below features 
+This code repository includes code snippet for below concepts 
 
 1. Hooks (useState, useEffects, useContext etc..)
 

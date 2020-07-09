@@ -1,5 +1,5 @@
 
-import { BUY_ICE_CREAM } from '../actions/actionTypes'
+import { GlobalConstants } from '../actions/actionTypes'
 
 const initialState = {
     IceCreamInventory: 20
@@ -7,7 +7,7 @@ const initialState = {
 
 export const iceCreamReducer = (state = initialState, action) => {
     switch (action.type) {
-        case BUY_ICE_CREAM: return {
+        case GlobalConstants.BUY_ICE_CREAM: return {
             ...state,
             IceCreamInventory: state.IceCreamInventory - action.payload
         }

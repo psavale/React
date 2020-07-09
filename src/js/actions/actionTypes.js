@@ -1,9 +1,19 @@
-const BUY_CAKE = "BUY_CAKE"
-const BUY_ICE_CREAM = "BUY_ICE_CREAM"
-const USER_SELECTED = "USER_SELECTED"
-const FETCH_USERS_REQUEST = 'FETCH_USERS_REQUEST'
-const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS'
-const FETCH_USERS_FAILURE = 'FETCH_USERS_FAILURE'
+export const GlobalConstants = {
+    BUY_CAKE: 'Buy Cake',
+    BUY_ICE_CREAM: 'Buy Icream',
+    USER_SELECTED: 'User Selected',
+    FETCH_USERS_REQUEST: 'Fetch Users',
+    FETCH_USERS_SUCCESS: 'Fetch Users Sucess',
+    FETCH_USERS_FAILURE: 'Fetch Users Failure',
+    ADD_TODO: 'Add Todo',
+    TOGGLE_TODO: 'Toggle Todo',
+    SET_VISIBILITY_FILTER: 'Set Visibility Filter',
+}
+
+export const VisibilityFilters = {
+    SHOW_ALL: 'SHOW_ALL',
+    SHOW_COMPLETED: 'SHOW_COMPLETED',
+    SHOW_ACTIVE: 'SHOW_ACTIVE'
+}
 
 
-export { BUY_CAKE, BUY_ICE_CREAM, USER_SELECTED, FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS, FETCH_USERS_FAILURE }

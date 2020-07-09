@@ -7,7 +7,9 @@ import Cake from '../../containers/cake';
 import IceCream from '../../containers/iceCream';
 import FormPost from '../http/FormPost';
 import OwlCarosuel from '../owl-carosuel';
-
+import AddToDo from '../todoList/AddToDo'
+import ToDoList from '../todoList/TodoList'
+import { Filters } from '../todoList/Filters';
 
 function formatName(user) {
     return user.firstName + ' ' + user.lastName;
@@ -87,7 +89,11 @@ class Home extends Component {
                 </div>
 
                 <div className="main-content">
-                    <div className="carosuel"> </div>
+                    <div className="container-center">
+                        <AddToDo />
+                        <ToDoList />
+                        <Filters />
+                    </div>
                 </div>
 
                 <div className="right-container">

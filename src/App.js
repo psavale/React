@@ -25,6 +25,7 @@ import List from './js/components/lists/list.content'
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom'
 import HookExamples from './js/components/hooks/hook-examples'
 import HocExample2 from './js/components/hoc/example2'
+import { CheckboxWithLabel } from '../src/shared/utility'
 
 const App = () => {
 

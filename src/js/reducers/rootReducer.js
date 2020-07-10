@@ -6,6 +6,7 @@ import { cakeReducer } from '../reducers/cakeReducer'
 import userReducer from '../reducers/userReducer'
 import { todos } from '../reducers/todos'
 import visibilityFilter from './visibilityFilter'
+
 //use combineReducers to create a single root reducer out of many
 export const rootReducer = combineReducers(
     {

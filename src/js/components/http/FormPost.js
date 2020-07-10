@@ -35,18 +35,8 @@ class FormPost extends Component {
         return (
             <div>
                 <form onSubmit={this.onSubmitHandler}>
-                    <div>
-                        <label> UserId </label>
-                        <input
-                            type="text"
-                            name='userId'
-                            value={userId}
-                            onChange={this.changeHandler}>
-                        </input>
-                    </div>
-
-                    <div>
-                        <label> Name </label>
+                    <div className="form-group">
+                        <label for="email">Name</label>
                         <input
                             type="text"
                             name='name'
@@ -54,19 +44,20 @@ class FormPost extends Component {
                             onChange={this.changeHandler}>
                         </input>
                     </div>
-
-                    <div>
-                        <label> Description </label>
+                    <div className="form-group">
+                        <label for="pwd">Email:</label>
                         <input
                             type="text"
-                            name='body'
-                            value={body}
+                            name='userId'
+                            value={userId}
                             onChange={this.changeHandler}>
                         </input>
                     </div>
-                    <div>
-                        <button type="submit">submit</button>
+                    <div class="form-group">
+                        <label for="pwd">Query:</label>
+                        <textarea className="form-control" name='body' value={body} onChange={this.changeHandler} rows="2" id="comment" />
                     </div>
+                    <button type="submit" class="btn btn-primary" style={{ marginTop: '-19px' }}>Submit</button>
                 </form>
             </div>
         );

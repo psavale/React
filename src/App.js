@@ -161,7 +161,7 @@ const App = () => {
       </div>
 
       <footer className="App-footer">
-        Copyright &copy; 2019 Lowes CA
+        Copyright &copy; 2019 packageName CA
       </footer>
 
     </div>

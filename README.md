@@ -152,4 +152,100 @@ React.memo()
 React.lazy()
 
 
+For sample docker application pls refer 
+  https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-prepare-app
+
+  steps to host the application using docker 
+  1. Create a sample application, it can be nodejs, python 
+  2. Create docker file in project 
+       https://docs.docker.com/language/nodejs/build-images/
+  3. Build the docker image 
+      docker build --tag node-docker .
+
+  ======> docker commands =========> 
+  1. docker ps 
+  2. docker ps -a 
+  # to see list of docker images in the local machine
+  3. docker images   
+
+  # check the container logs 
+  4. docker containerName logs
+
+  # remove the image 
+  5. docker rmi imageID
+
+  # remove the container 
+  6. docker rm containerID 
+  # build the image 
+  7. docker build --tag NameOfImageToSet .
+
+  # The Docker tag command creates a new tag for an image. It does not create a new image. The tag points to the same image and is just another way to reference the image.
+  8. docker tag node-docker:latest node-docker:v1.0.0 
+
+  # run the docker image (which run the application in container)
+  9.  docker run ImageName 
+
+  # run the docker image in detached mode
+  10. docker run -d -p 8888:8888 ImageName 
+  
+  # Start the container and expose port 8000 to port 8000 on the host.
+  11. docker run --publish 8887:8887 node-docker
+  docker run -d -p 8000:8000 --name container-name image-name
+
+ # remove all the container at once 
+  12. docker rm $(docker ps -a -q)
+  13. docker stop $(docker ps -a -q)
+  14. docker compose up -d 
+  15. docker compose down 
+
+  docker kill $(docker ps -q)
+
+  docker rm -vf $(docker ps -aq)
+
+ # enter the docker container 
+ docker exec -it <container id> /bin/bash
+
+# run the docker compose in detached mode 
+  docker-compose up -d --build
+  
+# Docker mapped the 8080 port inside of the container to the port 49160 on your machine
+ID            IMAGE                                COMMAND    ...   PORTS
+ecce33b30ebf  <your username>/node-web-app:latest  npm start  ...   49160->8080
+
+  docker run -d -p 0.0.0.0:5555:8888 react-app99 
+  docker exec clever_mayer yarn install
+
+  docker exec -it containerName bash
+
+
+#  install the vim editor in docker to veiw the file content 
+RUN ["apt-get", "update"]
+RUN ["apt-get", "-y", "install", "vim"]
+
+vim filename [ex: package.json]
+
+# come out of docker container 
+ctr+d
+
+
+
+
+
+
+
+============ Node Sass binding issue in docker container =================
+
+ # node sass binding issue in docker container 
+ docker exec -it containerName bash and then run
+ yarn add node-sass
+
+mount node_modules as volumes as shown below
+ volumes:
+      - .:/app
+      - /app/node_modules/
+command: bash -c "npm rebuild node-sass && yarn run server" 
+
+  
+
+
 

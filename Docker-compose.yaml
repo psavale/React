@@ -1,0 +1,16 @@
+version: "3"
+services:
+  my-react-app:
+    build: '.'
+    image: test4
+    environment:
+      - NODE_ENV=production
+    container_name: ps
+    volumes:
+      - .:/app
+      - /app/node_modules/
+
+    ports:
+      - "5555:8888"
+    command: bash -c "npm rebuild node-sass && yarn run server" 
+    tty: true 

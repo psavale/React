@@ -1,0 +1,29 @@
+version: "3"
+services:
+  my-react-app:
+    build: '.'
+    image: my-node-app
+    environment:
+      - NODE_ENV=production
+      - SERVER_PORT=8888
+      - CONNECTIONSTRING=mongodb://mongo:27017/my-react-app
+    container_name: ps
+    volumes:
+      - .:/app
+      - /app/node_modules/
+    ports:
+      - 5555:8888
+      - 9229:9229
+    command: bash -c "npm rebuild node-sass && yarn install && yarn run server" 
+    tty: true 
+
+  mongo:
+  image: mongo:4.2.8
+  ports:
+   - 27017:27017
+  volumes:
+    - mongodb:/data/db
+    - mongodb_config:/data/configdb
+volumes:
+  mongodb:
+  mongodb_config: 

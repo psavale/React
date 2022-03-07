@@ -190,7 +190,7 @@ For sample docker application pls refer
   
   # Start the container and expose port 8000 to port 8000 on the host.
   11. docker run --publish 8887:8887 node-docker
-  docker run -d -p 8000:8000 --name container-name image-name
+      docker run -d -p 8000:8000 --name container-name image-name
 
  # remove all the container at once 
   12. docker rm $(docker ps -a -q)
@@ -227,11 +227,26 @@ vim filename [ex: package.json]
 # come out of docker container 
 ctr+d
 
+================= pulling mongo image from docker hub =================
+docker run -it --rm -d -v mongodb:/data/db \
+  -v mongodb_config:/data/configdb -p 27017:27017 \
+  --network mongodb \
+  --name mongodb \
+  mongo
+
+  docker run \
+  -it --rm -d \
+  --network mongodb \
+  --name rest-server \
+  -p 5558:8888 \
+  -e CONNECTIONSTRING=mongodb://mongodb:27017/notes \
+  my-node-app
 
 
-
-
-
+ curl --request POST \
+  --url http://localhost:8000/my-react-app \
+  --header 'content-type: application/json' \
+  --data '{"name": "this is a note", "text": "this is a note that I wanted to take while I was working on writing a blog post.", "owner": "peter"}'
 
 ============ Node Sass binding issue in docker container =================
 
@@ -245,7 +260,9 @@ mount node_modules as volumes as shown below
       - /app/node_modules/
 command: bash -c "npm rebuild node-sass && yarn run server" 
 
-  
+ # couldn't find webpack module 
+  docker-compose up --build
+  docker-compose down -v
 
 
 

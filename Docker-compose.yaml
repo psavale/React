@@ -1,16 +1,31 @@
 version: "3"
 services:
   my-react-app:
-    build: '.'
-    image: test4
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: my-node-app
     environment:
       - NODE_ENV=production
     container_name: ps
     volumes:
+    # Allows changes made to project directory to be accessed by the container and persist
       - .:/app
-      - /app/node_modules/
-
+      # A volume dedicated to node modules.
+      - /app/node_modules
     ports:
-      - "5555:8888"
-    command: bash -c "npm rebuild node-sass && yarn run server" 
-    tty: true 
+      - 5555:8888
+    command: bash -c "npm rebuild node-sass && yarn install --force && yarn run server" 
+    tty: true
+
+  mongo:
+    image: mongo:4.2.8
+    ports:
+    - 27017:27017
+    volumes:
+      - mongodb:/data/db
+      - mongodb_config:/data/configdb
+volumes:
+  my-react-app-node_modules:
+  mongodb:
+  mongodb_config:

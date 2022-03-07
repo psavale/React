@@ -261,8 +261,16 @@ mount node_modules as volumes as shown below
 command: bash -c "npm rebuild node-sass && yarn run server" 
 
  # couldn't find webpack module 
-  docker-compose up --build
   docker-compose down -v
+  deleting volumes helped here 
+
+# enter into the stopped container 
+
+==> Commit the stopped image
+    docker commit 0dfd54557799 imageName
+   
+===> create a new container from the "broken" image
+    docker run -it --rm --entrypoint sh imageName
 
 
 

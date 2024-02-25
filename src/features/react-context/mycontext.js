@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from "react";
 
 const ThemeContext = createContext(null);
 
-function Form({ children }) {
+function Form() {
   return (
     <Panel title="Welcome">
       <Button>Sign up</Button>
@@ -29,7 +29,7 @@ function Button({ children }) {
 }
 
 export default function MyApp() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("silver");
   return (
     <ThemeContext.Provider value={theme}>
       <Form />
@@ -38,7 +38,7 @@ export default function MyApp() {
           type="checkbox"
           checked={theme === "dark"}
           onChange={(e) => {
-            setTheme(e.target.checked ? "dark" : "light");
+            setTheme(e.target.checked ? "dark" : "silver");
           }}
         />
         change theme

@@ -26,28 +26,23 @@ import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-ro
 import HookExamples from './js/components/hooks/hook-examples'
 import HocExample2 from './js/components/hoc/example2'
 import { CheckboxWithLabel } from '../src/shared/utility'
+import CheckLuckyNumber from "./hooks/useReducer/check-luckynum";
+import MyApp from "./features/react-context/mycontext";
 
 const App = () => {
-
-  // const user = {
-  //   name: "psavale",
-  //   age: 29,
-  //   initial: "PS"
-  // }
-  // const [activeScreen, changeScreen] = useState(0);
-
-  // function changeActiveScreen() {
-  //   changeScreen(activeScreen == 0 ? 1 : 0);
-  // }
-
-  const HandleMenu = () => {
-
+  const user = {
+    name: "psavale",
+    age: 29,
+    initial: "PS",
   };
+  const [activeScreen, changeScreen] = useState(0);
+
+  function changeActiveScreen() {
+    changeScreen(activeScreen == 0 ? 1 : 0);
+  }
 
   return (
     <div className="App">
-
-
       <div className="body">
         <Router>
           <header className="header">
@@ -55,12 +50,10 @@ const App = () => {
           </header>
 
           <div className="container">
-
-
             <Switch>
-              <Route exact path="/Home" component={Home} exact />
+              <Route exact path="/Home" component={Home} />
               <Route exact path="/">
-                <Redirect to="/Home" />
+                {/* <Redirect to="/Home" /> */}
               </Route>
               <Route path="/userlist" component={UsersContainer} />
               <Route path="/signup" component={SignUp} />
@@ -69,15 +62,18 @@ const App = () => {
               <Route path="/hocExample2" component={HocExample2} />
             </Switch>
 
-
             {/* <Router>
             <Route path="/HookExamples" component={HookExamples} />
             <Router path="/hocExample2" component={HocExample2} />
           </Router> */}
           </div>
         </Router>
+        <MyApp />
+        {/* <h5>welcome to the new wolddd</h5> */}
+        {/* <CheckLuckyNumber /> */}
         {/* <Home {...user} /> */}
         {/* <UsersContainer />
+        
 
         <div>
           <h2> You can Buy Cake and Ice Cream here</h2>
@@ -93,7 +89,6 @@ const App = () => {
 
         {/* React hooks demo for useState with prevState 
         <HookCounterTwo/> */}
-
 
         {/* <h2>http post request demo using axios</h2>
             <FormPost/> 
@@ -156,16 +151,13 @@ const App = () => {
               <div> <h1>Coaches</h1></div> 
       
         */}
-
-
       </div>
 
       <footer className="App-footer">
         Copyright &copy; 2019 packageName CA
       </footer>
-
     </div>
   );
-}
+};
 
 export default App;

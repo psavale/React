@@ -13,8 +13,4 @@ import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/dropdown';
 import '../styles/owl.scss'
 import 'bootstrap/scss/bootstrap.scss';
-
-
-
-
-
+import "../features/react-context/mycontext.style.css";

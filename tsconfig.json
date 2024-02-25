@@ -1,13 +1,10 @@
 {
-  "compileOnSave": false,
+  "compileOnSave": true,
   "compilerOptions": {
-    "outDir": "./src/dist",
+    "outDir": "./dist",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "lib": [
-      "dom",
-      "es2017"
-    ],
+    "lib": ["dom", "es2017"],
     "jsx": "react",
     "target": "es2017",
     "module": "es6",
@@ -23,10 +20,6 @@
     "noImplicitThis": true,
     "noEmitOnError": true
   },
-  "include": [
-    "src/**/*"   
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
